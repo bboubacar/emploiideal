@@ -3,7 +3,7 @@ import { LiaFileContractSolid } from "react-icons/lia";
 import { FaCity } from "react-icons/fa";
 
 export const menuPaths = {
-    home: "/",
+    home: "/emploiideal",
     offres: "/offres",
     contact: "/contact",
     connexionCandidat: "/candidat/connexion",
