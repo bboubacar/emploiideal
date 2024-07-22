@@ -96,13 +96,12 @@ const router = createBrowserRouter([
 function Main() {
     return (
         <>
-            {/* <Header /> */}
-            <div>Bonjour</div>
-            {/* <main>
+            <Header />
+            <main>
                 <Outlet />
             </main>
-            <Confirmation /> */}
-            {/* <Footer /> */}
+            <Confirmation />
+            <Footer />
         </>
     );
 }
@@ -120,8 +119,7 @@ function PageError() {
 }
 
 function App() {
-    return <Main />;
-    // <RouterProvider router={router} />;
+    return <RouterProvider router={router} />;
 }
 
 export default App;
