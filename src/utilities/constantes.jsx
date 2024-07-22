@@ -2,8 +2,10 @@ import { GrUserWorker } from "react-icons/gr";
 import { LiaFileContractSolid } from "react-icons/lia";
 import { FaCity } from "react-icons/fa";
 
+export const githubDomain = "/emploiideal";
+
 export const menuPaths = {
-    home: "/emploiideal",
+    home: githubDomain,
     offres: "/offres",
     contact: "/contact",
     connexionCandidat: "/candidat/connexion",

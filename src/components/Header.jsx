@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
     connexionSousmenu,
+    githubDomain,
     menuItem,
     sousMenuNames,
     userToken,
@@ -30,7 +31,7 @@ const Header = () => {
             <PopUpMessage message="Félicitation" type={false} />
             <div className="header-container">
                 <div className="logo-container">
-                    <img src="/images/logo.png" alt="logo" />
+                    <img src={githubDomain + "/images/logo.png"} alt="logo" />
                 </div>
                 <div className="nav-burger-menu" onClick={toggleMenu}>
                     {menuOpen ? <GrClose /> : <RxHamburgerMenu />}
