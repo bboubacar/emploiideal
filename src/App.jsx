@@ -20,7 +20,7 @@ import ConnexionAdmin from "./pages/connexion/ConnexionAdmin";
 
 const router = createBrowserRouter([
     {
-        path: "emploiideal/",
+        path: "/",
         element: <Main />,
         errorElement: <PageError />,
         children: [
