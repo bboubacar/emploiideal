@@ -96,13 +96,13 @@ const router = createBrowserRouter([
 function Main() {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div>Bonjour</div>
             {/* <main>
                 <Outlet />
             </main>
             <Confirmation /> */}
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
