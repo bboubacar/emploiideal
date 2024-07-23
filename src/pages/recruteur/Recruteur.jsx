@@ -9,14 +9,17 @@ import { useNavigate } from "react-router-dom";
 
 const Recruteur = () => {
     const [userStatut, setUserStatut] = useState(null);
+    const [isGuetting, setIsGuetting] = useState(false);
     let navigate = useNavigate();
     const getUserStatuts = useCallback(async () => {
+        setIsGuetting(true);
         const result = await axiosRequest(
             methods.get,
             `${routes.representants}${routes.validate}/${tables.representants}`,
             {},
             true
         );
+        setIsGuetting(false);
         setUserStatut(result?.data?.data);
     }, []);
 
@@ -42,6 +45,7 @@ const Recruteur = () => {
             <Entreprise
                 userStatut={userStatut}
                 getUserStatuts={getUserStatuts}
+                isGuetting={isGuetting}
             />
             <Profile />
             <Content userStatut={userStatut} />

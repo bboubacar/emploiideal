@@ -1,14 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { openModal } from "../../redux/confirmSlice";
 import { dashboardName, notifSms } from "../../utilities/constantes";
 import { routes } from "../../utilities/db_infos";
 import { openOffreDetails, returnUpdateId } from "../../utilities/functions";
 import Btns from "../../components/Btns";
 
 const Candidatures = ({ content, validInvalid }) => {
-    const dispatch = useDispatch();
-
     const annuler = async (data) => {
         const id = returnUpdateId(dashboardName.candidatures, data);
         validInvalid(

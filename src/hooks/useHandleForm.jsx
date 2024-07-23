@@ -137,7 +137,7 @@ const useHandleForm = (
                         cleanedData,
                         true
                     );
-                    console.log(result);
+
                     checkNotif(
                         result,
                         notifSms.modifSucces,
