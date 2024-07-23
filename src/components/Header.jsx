@@ -31,7 +31,7 @@ const Header = () => {
             <PopUpMessage message="Félicitation" type={false} />
             <div className="header-container">
                 <div className="logo-container">
-                    <img src={githubDomain + "/images/logo.png"} alt="logo" />
+                    <img src={"/images/logo.png"} alt="logo" />
                 </div>
                 <div className="nav-burger-menu" onClick={toggleMenu}>
                     {menuOpen ? <GrClose /> : <RxHamburgerMenu />}

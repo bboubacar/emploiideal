@@ -5,7 +5,7 @@ import { FaCity } from "react-icons/fa";
 export const githubDomain = "/emploiideal";
 
 export const menuPaths = {
-    home: githubDomain,
+    home: "/",
     offres: "/offres",
     contact: "/contact",
     connexionCandidat: "/candidat/connexion",

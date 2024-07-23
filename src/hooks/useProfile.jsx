@@ -143,9 +143,7 @@ const useProfile = (userTable, path) => {
 
                 // On met à jour le state
                 getUserData();
-                stopLoader(setIsLoading, () => {
-                    setIsOnEdit(false);
-                });
+                stopLoader(setIsLoading, onCancel);
             }
         } catch (err) {
             console.log("erreur ", err);
