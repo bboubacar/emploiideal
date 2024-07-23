@@ -64,7 +64,7 @@ const useOffres = () => {
             if (!search.titre) setError("Veuillez saisir un métier");
             return;
         }
-        setIsLoading(true);
+        // setIsLoading(true);
 
         // On combine let filtre le contenu de seauch
         const newSearch = search;
@@ -76,7 +76,8 @@ const useOffres = () => {
             newSearch,
             true
         );
-
+        console.log(result);
+        return;
         setTimeout(() => {
             setIsLoading(false);
             setOffres(result?.data?.data);
