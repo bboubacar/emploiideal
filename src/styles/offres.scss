@@ -11,6 +11,15 @@
         min-width: 300px;
         margin-bottom: 5px;
         height: fit-content;
+        position: relative;
+
+        .reset{
+            @include formSubmitBtn();
+            font-size: .9rem;
+            position: absolute;
+            top: 0;
+            right: $largePadding;
+        }
 
         @include rangeInput();
 
@@ -145,10 +154,16 @@
 @media (max-width: $tabletteMaxWidth){
     .listes-offres{
         flex-direction: column;
+        padding-top: 30px;
 
         .filtres{
             box-shadow: none;
             padding: 0 0 $largePadding 0;
+
+            .reset{
+                top: -50px;
+                right: 0;
+            }
         }
 
         .search-results{

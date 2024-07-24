@@ -46,6 +46,9 @@ const ProfileUsers = ({ userTable, path }) => {
                         )}
                     </div>
                     <form>
+                        {isOnEdit && (
+                            <div className="taille">Taille max (500ko)</div>
+                        )}
                         <Avatar
                             sms={sms}
                             userDetails={modifData}
@@ -102,6 +105,11 @@ const ProfileUsers = ({ userTable, path }) => {
                                         <div className="file-error">
                                             {sms?.cv}
                                         </div>
+                                        {isOnEdit && (
+                                            <div className="taille">
+                                                Taille max (500ko)
+                                            </div>
+                                        )}
                                         {!isOnEdit ? (
                                             <div className="file">
                                                 {cvNom ? (
@@ -125,7 +133,7 @@ const ProfileUsers = ({ userTable, path }) => {
                                                     className="choix"
                                                     htmlFor="cv"
                                                 >
-                                                    Choisir un fichier
+                                                    Choisir un fichier pdf
                                                 </label>
                                                 <div>{uploadedCv?.name}</div>
                                                 <input

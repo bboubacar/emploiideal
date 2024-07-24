@@ -142,7 +142,7 @@ export const recruteurDashboardTab = [
     },
     {
         name: recruteurDashboardName.candidatsOffre,
-        title: "Candidtaures",
+        title: "Candidatures",
         contents: [],
     },
     {

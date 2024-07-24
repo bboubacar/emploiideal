@@ -1,9 +1,10 @@
 import React from "react";
-import { menuPaths } from "../../utilities/constantes";
 import { routes } from "../../utilities/db_infos";
-import { openOffreDetails } from "../../utilities/functions";
+import { formatDate, openOffreDetails } from "../../utilities/functions";
 
 const offre = ({ offre }) => {
+    const convertDatePub = formatDate(offre?.date_pub);
+    const convertDateExp = formatDate(offre?.date_exp);
     return (
         <div
             className="offres-results"
@@ -27,10 +28,10 @@ const offre = ({ offre }) => {
                 <strong>Lieu : </strong> {offre?.commune}
             </span>
             <span>
-                <strong>Date publication: </strong> {offre?.date_pub}
+                <strong>Date publication: </strong> {convertDatePub}
             </span>
             <span>
-                <strong>Date d'expiration: </strong> {offre?.date_exp}
+                <strong>Date d'expiration: </strong> {convertDateExp}
             </span>
             <span>
                 <strong>Type de contrat: </strong> {offre?.type}

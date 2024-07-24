@@ -1,10 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-    menuPaths,
-    offreData,
-    searchStore,
-    typeContrat,
-} from "../utilities/constantes";
+import { searchStore, typeContrat } from "../utilities/constantes";
 import { axiosRequest } from "../utilities/functions";
 import { methods, routes } from "../utilities/db_infos";
 import { useSearch } from "./useSearch";
@@ -19,24 +14,31 @@ const useOffres = () => {
     const [currentContract, setCurrentContract] = useState(null);
     const rangeSal = useRef(null);
 
+    const onReset = () => {
+        localStorage.removeItem(searchStore);
+        setSearch({});
+        setFiltre({});
+        setCurrentContract(null);
+        setOffres([]);
+    };
+
     useEffect(() => {
         // On recupère les fitres precedement effectués et stocker dans localStorage
         let preVal = localStorage.getItem(searchStore);
+        if (!preVal || preVal === "null") return;
 
-        if (preVal) {
-            preVal = JSON.parse(preVal);
-            setSearch({ titre: preVal?.titre, commune: preVal?.commune });
-            setFiltre((prev) => ({ ...prev, type: preVal?.type }));
-            typeContrat.map((contr) => {
-                if (contr.value === preVal?.type) setCurrentContract(contr);
-            });
+        preVal = JSON.parse(preVal);
+        setSearch({ titre: preVal?.titre, commune: preVal?.commune });
+        setFiltre((prev) => ({ ...prev, type: preVal?.type }));
+        typeContrat.map((contr) => {
+            if (contr.value === preVal?.type) setCurrentContract(contr);
+        });
 
-            setFiltre((prev) => ({
-                ...prev,
-                salaire_min: preVal?.salaire_min,
-            }));
-            setStorage(preVal);
-        }
+        setFiltre((prev) => ({
+            ...prev,
+            salaire_min: preVal?.salaire_min,
+        }));
+        setStorage(preVal);
     }, []);
 
     // Dès que les données du localstorage seront charger alors il fait la recherche
@@ -98,6 +100,7 @@ const useOffres = () => {
         search,
         dropdownContrat,
         filtre,
+        onReset,
     };
 };
 

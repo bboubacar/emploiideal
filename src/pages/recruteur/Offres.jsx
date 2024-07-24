@@ -1,7 +1,10 @@
 import EditDeleteItem from "../../components/EditDeleteItem";
 import { routes } from "../../utilities/db_infos";
+import { formatDate } from "../../utilities/functions";
 
 const Offres = ({ content, openEdit, onDelete }) => {
+    const convertDatePub = formatDate(content?.date_pub);
+    const convertDateExp = formatDate(content?.date_exp);
     return (
         <div className="offres-results">
             <EditDeleteItem
@@ -26,10 +29,10 @@ const Offres = ({ content, openEdit, onDelete }) => {
                     <strong>Statuts: </strong> {content?.statut}
                 </span>
                 <span>
-                    <strong>Date publication: </strong> {content?.date_pub}
+                    <strong>Date publication: </strong> {convertDatePub}
                 </span>
                 <span>
-                    <strong>Date d'expiration: </strong> {content?.date_exp}
+                    <strong>Date d'expiration: </strong> {convertDateExp}
                 </span>
                 <span>
                     <strong>Type de contrat: </strong> {content?.type}

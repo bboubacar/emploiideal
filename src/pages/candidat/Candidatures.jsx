@@ -1,10 +1,15 @@
 import React from "react";
 import { dashboardName, notifSms } from "../../utilities/constantes";
 import { routes } from "../../utilities/db_infos";
-import { openOffreDetails, returnUpdateId } from "../../utilities/functions";
+import {
+    formatDate,
+    openOffreDetails,
+    returnUpdateId,
+} from "../../utilities/functions";
 import Btns from "../../components/Btns";
 
 const Candidatures = ({ content, validInvalid }) => {
+    const convertDateEnv = formatDate(content?.date_denvoi);
     const annuler = async (data) => {
         const id = returnUpdateId(dashboardName.candidatures, data);
         validInvalid(
@@ -24,14 +29,14 @@ const Candidatures = ({ content, validInvalid }) => {
                     {content?.commune ? " - " + content?.commune : ""}
                 </p>
                 <p>Status: {content?.label}</p>
-                <p>Date d'envoi: {content?.date_denvoi}</p>
+                <p>Date d'envoi: {convertDateEnv}</p>
             </div>
             <Btns
                 data={content}
                 validFunc={(ev) => openOffreDetails(content)}
                 rejFunc={() => annuler(content)}
                 validLabel="Details"
-                rejLabel="Annuler"
+                rejLabel="Annulée"
                 popupText="l'annulation la candidature"
             />
         </div>

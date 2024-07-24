@@ -23,11 +23,15 @@ const Offres = () => {
         search,
         dropdownContrat,
         filtre,
+        onReset,
     } = useOffres();
 
     return (
         <section className="listes-offres">
             <article className="filtres">
+                <span className="reset" onClick={onReset}>
+                    Reinitiliser
+                </span>
                 <Itemcontainer
                     title="Contrat"
                     toggleDropdown={toggleContrat}

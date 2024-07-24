@@ -3,10 +3,13 @@ import { ImSpinner9 } from "react-icons/im";
 import useOffreDetails from "../../hooks/useOffreDetails";
 import { routes } from "../../utilities/db_infos";
 import Image from "../../components/Image";
+import { formatDate } from "../../utilities/functions";
 
 const Details = () => {
     const { isLoading, already, postuler, handleChange, offre } =
         useOffreDetails();
+    const convertDatePub = formatDate(offre?.date_pub);
+    const convertDateExp = formatDate(offre?.date_exp);
 
     return (
         <div className="offre-details">
@@ -24,10 +27,10 @@ const Details = () => {
                 <strong>Lieu : </strong> {offre?.commune}
             </span>
             <span>
-                <strong>Date publication: </strong> {offre?.date_pub}
+                <strong>Date publication: </strong> {convertDatePub}
             </span>
             <span>
-                <strong>Date d'expiration: </strong> {offre?.date_exp}
+                <strong>Date d'expiration: </strong> {convertDateExp}
             </span>
             <span>
                 <strong>Type de contrat: </strong> {offre?.type}

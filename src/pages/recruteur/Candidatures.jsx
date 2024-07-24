@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { openModal } from "../../redux/confirmSlice";
 import { ImSpinner9 } from "react-icons/im";
 import { v4 as uuidv4 } from "uuid";
 import useCandidatures from "../../hooks/useCandidatures";
-import { openParcours } from "../../utilities/functions";
+import { formatDate, openParcours } from "../../utilities/functions";
 import Btns from "../../components/Btns";
 
 const Candidatures = ({ offre, toggleOffres }) => {
@@ -38,7 +37,8 @@ const Candidatures = ({ offre, toggleOffres }) => {
                                 </h2>
                                 <div>{cand?.profession}</div>
                                 <div className="date">
-                                    Date d'envoi: {cand?.date_denvoi}
+                                    Date d'envoi:{" "}
+                                    {formatDate(cand?.date_denvoi)}
                                 </div>
                                 <div className="">
                                     <div
@@ -52,7 +52,7 @@ const Candidatures = ({ offre, toggleOffres }) => {
                                         validFunc={() => {}}
                                         rejFunc={() => rejeter(cand)}
                                         validLabel="Contacter"
-                                        rejLabel="Rejeter"
+                                        rejLabel="Rejetée"
                                         popupText="le rejet de la candidature"
                                     />
                                 </div>

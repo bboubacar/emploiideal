@@ -163,6 +163,14 @@
 
                     @include offres-results();
 
+                    .offres-results{
+                        .recruteur-offre{
+                            .description{
+                                -webkit-line-clamp: unset;
+                            }
+                        }
+                    }
+
                     .candidatures{
                         position: relative;
                         display: contents;
