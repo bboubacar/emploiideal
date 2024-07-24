@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
     axiosRequest,
     inputChange,
     setErrorSMSIfEmptyInput,
     validateEmail,
-    verifyToken,
 } from "../utilities/functions";
 import { menuPaths, userToken, fromOffre } from "../utilities/constantes";
 import { methods, routes, tables } from "../utilities/db_infos";
@@ -24,26 +23,13 @@ const userConnection = (table) => {
     });
     const [sms, setSms] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    let location = useLocation();
     const dispatch = useDispatch();
     let navigate = useNavigate();
 
-    // useEffect(() => {
-    //     // try {
-    //     //     // let token = localStorage.getItem(userToken);
-    //     //     // const verify = async () => {
-    //     //     //     let is_token = await verifyToken(token, table);
-    //     //     //     if (is_token) {
-    //     //     //         if (table === tables.representants)
-    //     //     //             navigate(menuPaths.recruteur);
-    //     //     //         else if (table === tables.candidats)
-    //     //     //             navigate(menuPaths.candidat);
-    //     //     //     }
-    //     //     // };
-    //     //     // verify();
-    //     // } catch (err) {
-    //     //     console.log("erreur ", err);
-    //     // }
-    // }, []);
+    useEffect(() => {
+        console.log(location);
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
