@@ -369,7 +369,7 @@ export function handleFile(event, dataFunc, smsFunc, blobFunc, imgFunc, cvFileFu
     
     // Pour l'avatar ou le logo
     if (name === "avatar" || name === "logo") {
-        const types = ["image/png", "image/jpeg"];
+        const types = ["image/png", "image/jpeg", , "image/webp"];
         if (!types.includes(file.type)) {
             smsFunc(prev =>({ ...prev, [name]: "Format d'image incorrect" }));
             return;
