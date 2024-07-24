@@ -84,8 +84,7 @@ const TabRecruteur = ({
             <div className={"content-" + dashContent.name + " active-content"}>
                 {pageLoading && activeTab === 0 ? (
                     "Loading..."
-                ) : dashContent?.name === recruteurDashboardName.offres &&
-                  dashContent?.contents?.length > 0 ? (
+                ) : dashContent?.name === recruteurDashboardName.offres ? (
                     <>
                         <AddOffre
                             isOnOpen={isOnAdd}
@@ -121,8 +120,12 @@ const TabRecruteur = ({
                         />
                     ))
                 ) : (
-                    "Pas de contenu"
+                    ""
                 )}
+                {dashContent?.name !== recruteurDashboardName.rechercher &&
+                    dashContent?.contents?.length <= 0 &&
+                    offres?.length <= 0 &&
+                    "Pas de contenu"}
                 {dashContent?.name === recruteurDashboardName.rechercher &&
                 activeTab != 0 ? (
                     <Rechercher />

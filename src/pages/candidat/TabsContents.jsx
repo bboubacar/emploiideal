@@ -69,8 +69,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
             <div className={"content-" + dashContent?.name + " active-content"}>
                 {pageLoading ? (
                     "Loading..."
-                ) : dashContent?.name === dashboardName.experiences &&
-                  dashContent?.contents?.length > 0 ? (
+                ) : dashContent?.name === dashboardName.experiences ? (
                     <>
                         <AddExperience
                             isOnOpen={isOnAdd}
@@ -79,7 +78,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             data={modifData}
                         />
                         <div className="items">
-                            {dashContent?.contents.map((content) => (
+                            {dashContent?.contents?.map((content) => (
                                 <Experiences
                                     key={uuidv4()}
                                     content={content}
@@ -89,8 +88,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             ))}
                         </div>
                     </>
-                ) : dashContent?.name === dashboardName.competences &&
-                  dashContent?.contents?.length > 0 ? (
+                ) : dashContent?.name === dashboardName.competences ? (
                     <>
                         <AddCompetence
                             isOnOpen={isOnAdd}
@@ -99,7 +97,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             data={modifData}
                         />
                         <div className="items">
-                            {dashContent?.contents.map((content) => (
+                            {dashContent?.contents?.map((content) => (
                                 <Competences
                                     key={uuidv4()}
                                     content={content}
@@ -109,8 +107,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             ))}
                         </div>
                     </>
-                ) : dashContent?.name === dashboardName.formations &&
-                  dashContent?.contents?.length > 0 ? (
+                ) : dashContent?.name === dashboardName.formations ? (
                     <>
                         <AddFormation
                             isOnOpen={isOnAdd}
@@ -119,7 +116,7 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             data={modifData}
                         />
                         <div className="items">
-                            {dashContent?.contents.map((content) => (
+                            {dashContent?.contents?.map((content) => (
                                 <Formations
                                     key={uuidv4()}
                                     content={content}
@@ -129,10 +126,9 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                             ))}
                         </div>
                     </>
-                ) : dashContent?.name === dashboardName.candidatures &&
-                  dashContent?.contents?.length > 0 ? (
+                ) : dashContent?.name === dashboardName.candidatures ? (
                     <div className="items">
-                        {dashContent?.contents.map((content) => (
+                        {dashContent?.contents?.map((content) => (
                             <Candidatures
                                 content={content}
                                 validInvalid={validInvalid}
@@ -141,8 +137,11 @@ const TabsContents = ({ dashContent, updateState, pageLoading }) => {
                         ))}
                     </div>
                 ) : (
-                    "Pas de contenu"
+                    ""
                 )}
+                {dashContent?.contents?.length <= 0 &&
+                    !pageLoading &&
+                    "Pas de contenu"}
             </div>
             {isLoading ? (
                 <div className="loading-container">

@@ -51,6 +51,7 @@
         
                     .experience, .competence, .formation, .candidature{
                         position: relative;
+                        margin-bottom: 1rem;
 
                         &:last-child{
                             margin-bottom: 0;
@@ -75,6 +76,7 @@
                     }
                     .items{
                         @include candidatItem();
+                        row-gap: 0;
                     }
 
                     .items:has(.candidature){
