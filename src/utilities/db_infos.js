@@ -1,5 +1,4 @@
 export const routes = {
-    // based_url: "http://localhost/stage/api/",
     // based_url: "http://offres.emplois/",
     based_url: "https://bcr.alwaysdata.net/",
     users: "users/",

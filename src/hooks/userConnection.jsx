@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     axiosRequest,
     inputChange,
@@ -23,13 +23,8 @@ const userConnection = (table) => {
     });
     const [sms, setSms] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-    let location = useLocation();
     const dispatch = useDispatch();
     let navigate = useNavigate();
-
-    useEffect(() => {
-        console.log(location);
-    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();

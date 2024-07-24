@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import {
-    connexionSousmenu,
-    githubDomain,
-    menuItem,
-    sousMenuNames,
-    userToken,
-} from "../utilities/constantes";
+import { NavLink, useLocation } from "react-router-dom";
+import { menuItem, sousMenuNames, userToken } from "../utilities/constantes";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 import PopUpMessage from "./PopUpMessage";
@@ -31,7 +25,7 @@ const Header = () => {
             <PopUpMessage message="Félicitation" type={false} />
             <div className="header-container">
                 <div className="logo-container">
-                    <img src={"/images/logo.png"} alt="logo" />
+                    <img src="/images/logo.png" alt="logo" />
                 </div>
                 <div className="nav-burger-menu" onClick={toggleMenu}>
                     {menuOpen ? <GrClose /> : <RxHamburgerMenu />}
