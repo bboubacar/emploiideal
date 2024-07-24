@@ -5,7 +5,7 @@ import useEntreprise from "../../hooks/useEntreprise";
 import { userValide } from "../../utilities/constantes";
 import { routes } from "../../utilities/db_infos";
 
-const Entreprise = ({ userStatut, getUserStatuts, isGuetting }) => {
+const Entreprise = ({ userStatut, getUserStatuts }) => {
     const {
         closeEdit,
         openEdit,
@@ -21,8 +21,6 @@ const Entreprise = ({ userStatut, getUserStatuts, isGuetting }) => {
     } = useEntreprise(userStatut, getUserStatuts);
     return (
         <div className="entreprise">
-            {!userStatut && isGuetting && <div>Loading...</div>}
-
             {!isOnEdit && userStatut?.valid === userValide.valid && (
                 <>
                     <img
@@ -43,7 +41,7 @@ const Entreprise = ({ userStatut, getUserStatuts, isGuetting }) => {
                 </>
             )}
 
-            {!isGuetting && isOnEdit && (
+            {isOnEdit || !userStatut ? (
                 <div className="add-entreprise">
                     <div className="title">
                         Choisissez votre entreprise pour acceder aux services
@@ -94,6 +92,8 @@ const Entreprise = ({ userStatut, getUserStatuts, isGuetting }) => {
                         </div>
                     </form>
                 </div>
+            ) : (
+                ""
             )}
 
             {!isOnEdit && userStatut?.valid === userValide.attente && (

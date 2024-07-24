@@ -67,7 +67,7 @@ const Offres = () => {
                             <ImSpinner9 />
                         </div>
                     ) : (
-                        offres.map((offre) => (
+                        offres?.map((offre) => (
                             <Offre offre={offre} key={uuidv4()} />
                         ))
                     )}
