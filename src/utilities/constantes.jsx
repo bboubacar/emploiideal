@@ -212,6 +212,8 @@ export const notifSms = {
     afiliateFail: "Echec d'affiliation",
     invalidAffiliation: "Affiliation rejeter avec succès",
     invalidAffiliationFail: "Echec du rejet de l'afiliation",
+    smsSend: "Message envoyé avec succès",
+    smsFail: "Échec de l'envoi de votre message",
 };
 
 export const typeNotif = {

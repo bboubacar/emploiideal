@@ -56,6 +56,9 @@
         row-gap: 1rem;
         padding: $xlPadding $largePadding $largePadding;
         box-shadow: $shadowBorder;
+        position: relative;
+
+        @include loading();
 
         h2{
             text-align: center;
@@ -81,9 +84,11 @@
             }
         }
 
-        div.send-btn{
+        .send-btn{
             @include formSubmitBtn($defaultPadding, $largePadding, $btns-bg);
             margin: $largePadding 0 0 auto;
+            width: 100%;
+            border: none;
         }
     }
 }

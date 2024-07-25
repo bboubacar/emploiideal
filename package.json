@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@reduxjs/toolkit": "^2.2.6",
     "axios": "^1.6.8",
     "jwt-decode": "^4.0.0",
