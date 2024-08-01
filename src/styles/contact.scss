@@ -27,7 +27,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             transition: $defautDuration;
-            width: fit-content;
+            width: 100%;
 
             &.tel:hover, &.email:hover{
                 color: $light-blue;
@@ -39,6 +39,10 @@
 
             span{
                 line-height: 1.7;
+                display: inline-block;
+                @include truncateText();
+                height: auto;
+                width: 100%;
             }
         }
 
