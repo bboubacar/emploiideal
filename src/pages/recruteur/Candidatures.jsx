@@ -1,5 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { ImSpinner9 } from "react-icons/im";
 import { v4 as uuidv4 } from "uuid";
 import useCandidatures from "../../hooks/useCandidatures";
@@ -9,7 +8,6 @@ import Btns from "../../components/Btns";
 const Candidatures = ({ offre, toggleOffres }) => {
     const { rejeter, toggleOff, rejLoading, offreLoading, candidatures } =
         useCandidatures(toggleOffres);
-    const dispatch = useDispatch();
     return (
         <div className="candidatures">
             <label onClick={(ev) => toggleOff(offre)}>

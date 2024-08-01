@@ -4,15 +4,29 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquareYoutube } from "react-icons/fa6";
+import { openNewWin } from "../utilities/functions";
+import { menuPaths } from "../utilities/constantes";
 
 const Footer = () => {
     return (
         <footer>
             <div className="footer-container">
                 <div className="metions">
-                    <span>Conditions générales</span>
+                    <span
+                        onClick={() => {
+                            openNewWin(menuPaths.conditions);
+                        }}
+                    >
+                        Conditions générales
+                    </span>
                     <div className="politique">
-                        <span>Politique de confidentialité</span>
+                        <span
+                            onClick={() => {
+                                openNewWin(menuPaths.politiques);
+                            }}
+                        >
+                            Politique de confidentialité
+                        </span>
                         <div className="social-media">
                             <FaSquareFacebook />
                             <FaLinkedin />
@@ -21,7 +35,13 @@ const Footer = () => {
                             <FaSquareYoutube />
                         </div>
                     </div>
-                    <span>Mentions légales</span>
+                    <span
+                        onClick={() => {
+                            openNewWin(menuPaths.mentions);
+                        }}
+                    >
+                        Mentions légales
+                    </span>
                 </div>
             </div>
         </footer>

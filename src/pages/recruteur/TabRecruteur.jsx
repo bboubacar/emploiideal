@@ -125,6 +125,7 @@ const TabRecruteur = ({
                 {dashContent?.name !== recruteurDashboardName.rechercher &&
                     dashContent?.contents?.length <= 0 &&
                     offres?.length <= 0 &&
+                    !pageLoading &&
                     "Pas de contenu"}
                 {dashContent?.name === recruteurDashboardName.rechercher &&
                 activeTab != 0 ? (

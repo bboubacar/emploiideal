@@ -17,6 +17,9 @@ import Pdf from "./pages/recruteur/Pdf";
 import Confirmation from "./components/Confirmation";
 import Admin from "./pages/admin/Admin";
 import ConnexionAdmin from "./pages/connexion/ConnexionAdmin";
+import Conditions from "./pages/footer/Conditions";
+import Politiques from "./pages/footer/Politiques";
+import Mentions from "./pages/footer/Mentions";
 
 const router = createBrowserRouter([
     {
@@ -89,7 +92,12 @@ const router = createBrowserRouter([
     {
         path: menuPaths.docs,
         element: <WithoutHeaderFooter />,
-        children: [{ path: menuPaths.cv + "/:id", element: <Pdf /> }],
+        children: [
+            { path: menuPaths.cv + "/:id", element: <Pdf /> },
+            { path: menuPaths.conditions, element: <Conditions /> },
+            { path: menuPaths.politiques, element: <Politiques /> },
+            { path: menuPaths.mentions, element: <Mentions /> },
+        ],
     },
 ]);
 

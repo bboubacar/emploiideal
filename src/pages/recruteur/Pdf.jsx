@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 class BodyCv extends React.Component {
     render() {
         const userData = this.props?.userData;
-        console.log(userData);
         return (
             <div className="cv-builder">
                 {userData.length > 0 ? (

@@ -20,6 +20,9 @@ export const menuPaths = {
     congrat2: "/recruteur/congratulation",
     docs: "/docs",
     cv: "cv",
+    conditions: "conditions_generales",
+    politiques: "politiques",
+    mentions: "mentions_legales",
 };
 
 export const userToken = "token";

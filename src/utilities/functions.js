@@ -290,7 +290,7 @@ export function stopLoader(setFunc, callBack=()=>{}){
     setTimeout(()=>{
         setFunc(false);
         if (typeof callBack === "function") callBack();
-    }, 1000);
+    }, 0);
 }
 
 /**
@@ -467,6 +467,11 @@ export const openParcours = (data)=>{
     let url = `${menuPaths.docs}/${menuPaths.cv}/${data?.id_users}`;
     if (data?.cv) url = routes.based_url + data?.cv;
 
+    window.open(url, "_blank");
+}
+
+export const openNewWin = (file)=>{
+    let url = `${menuPaths.docs}/${file}`;
     window.open(url, "_blank");
 }
 
