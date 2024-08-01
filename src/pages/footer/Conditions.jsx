@@ -1,6 +1,8 @@
 import React from "react";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Conditions = () => {
+    usePageTitle("Conditions générales");
     return (
         <section className="conditions">
             <article className="content">

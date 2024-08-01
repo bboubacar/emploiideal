@@ -6,9 +6,11 @@ import { axiosRequest, verifyToken } from "../../utilities/functions";
 import { menuPaths, userToken } from "../../utilities/constantes";
 import { methods, routes, tables } from "../../utilities/db_infos";
 import { useNavigate } from "react-router-dom";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Recruteur = () => {
     const [userStatut, setUserStatut] = useState(null);
+    usePageTitle("Recruteur");
     let navigate = useNavigate();
     const getUserStatuts = useCallback(async () => {
         const result = await axiosRequest(

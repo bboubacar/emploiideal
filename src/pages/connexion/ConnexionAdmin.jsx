@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Connexion from "./Connexion";
-import { menuPaths } from "../../utilities/constantes";
 import userConnection from "../../hooks/userConnection";
 
 const ConnexionAdmin = ({ table }) => {

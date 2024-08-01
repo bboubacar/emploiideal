@@ -4,9 +4,11 @@ import { verifyToken } from "../../utilities/functions";
 import { tables } from "../../utilities/db_infos";
 import { useNavigate } from "react-router-dom";
 import { menuPaths, userToken } from "../../utilities/constantes";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Admin = () => {
     let navigate = useNavigate();
+    usePageTitle("Administrateur");
 
     // useEffect(() => {
     //     // Verifi la session de l'utilisateur ou le redirige vers la page connexion

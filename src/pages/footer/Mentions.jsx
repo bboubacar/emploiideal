@@ -1,8 +1,10 @@
 import React from "react";
 import { openNewWin } from "../../utilities/functions";
 import { menuPaths } from "../../utilities/constantes";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Mentions = () => {
+    usePageTitle("Mentions légales");
     return (
         <section className="mentions">
             <h1>Mentions Légales</h1>

@@ -6,6 +6,7 @@ import { FiPhone } from "react-icons/fi";
 import { dispatchNotification, stopLoader } from "../../utilities/functions";
 import { notifSms, typeNotif } from "../../utilities/constantes";
 import { ImSpinner9 } from "react-icons/im";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const mailIdKey = import.meta.env.VITE_EMAILJS_ID_KEY;
 const mailServiceKey = import.meta.env.VITE_EMAILJS_SERVICE_KEY;
@@ -16,6 +17,7 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    usePageTitle("Contact");
 
     const handleNameChange = (e) => {
         setName(e.target.value);

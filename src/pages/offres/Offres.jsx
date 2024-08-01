@@ -7,6 +7,7 @@ import Offre from "./Offre";
 import { ImSpinner9 } from "react-icons/im";
 import useOffres from "../../hooks/useOffres";
 import { v4 as uuidv4 } from "uuid";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const salaire = "salaire_min";
 const Offres = () => {
@@ -25,7 +26,7 @@ const Offres = () => {
         filtre,
         onReset,
     } = useOffres();
-
+    usePageTitle("Offres");
     return (
         <section className="listes-offres">
             <article className="filtres">

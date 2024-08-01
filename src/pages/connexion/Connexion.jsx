@@ -4,6 +4,7 @@ import { FaLock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import UserInput from "../../components/UserInput";
 import { ImSpinner9 } from "react-icons/im";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Connexion = ({
     handleChange,
@@ -12,6 +13,7 @@ const Connexion = ({
     isLoading,
     incriptionPath = "",
 }) => {
+    usePageTitle("Connexion");
     return (
         <section className="login-user">
             <form onSubmit={handleSubmit} className="login-container">

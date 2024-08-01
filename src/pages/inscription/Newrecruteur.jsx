@@ -1,10 +1,10 @@
 import React from "react";
-import { IoPerson } from "react-icons/io5";
-import { FaLock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { menuPaths } from "../../utilities/constantes";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Newrecruteur = () => {
+    usePageTitle("Inscription");
     return (
         <section className="new-user">
             <article className="new-user-container">
