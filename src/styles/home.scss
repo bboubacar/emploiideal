@@ -33,6 +33,9 @@ $searchInputHeight: 40px;
                 margin: 0 auto;
                 font-weight: bold;
                 font-weight: 900;
+                background-color: rgba($light-blue, .3);
+                padding: 0 $defaultPadding;
+                border-radius: $items-radius;
             }
         }
     }
