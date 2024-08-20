@@ -19,9 +19,7 @@ const Accroche = () => {
     return (
         <section className="accroche">
             <article className="accroche-container">
-                <h1 role="textbox" aria-multiline="true">
-                    OFFRES D'EMPLOIS IDEALES
-                </h1>
+                <h1>OFFRES D'EMPLOIS IDEALES</h1>
                 <Search
                     onChange={searchChange}
                     searchSub={handleSubmit}
