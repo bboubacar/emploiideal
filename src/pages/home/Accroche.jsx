@@ -1,12 +1,11 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import Search from "../../components/Search";
 import { useSearch } from "../../hooks/useSearch";
 import { menuPaths, searchStore } from "../../utilities/constantes";
 import { useNavigate } from "react-router-dom";
 
 const Accroche = () => {
-    const { searchChange, search, setSearch } = useSearch();
+    const { searchChange, search } = useSearch();
     const navigate = useNavigate();
 
     const handleSubmit = () => {

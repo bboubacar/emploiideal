@@ -64,6 +64,10 @@
 
         @include loading();
 
+        .loading-container{
+            z-index: 3;
+        }
+
         h2{
             text-align: center;
             font-size: 1.5rem;
