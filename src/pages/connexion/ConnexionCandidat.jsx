@@ -14,6 +14,7 @@ const ConnexionCandidat = ({ table }) => {
             incriptionPath={menuPaths.newUser}
             sms={sms}
             isLoading={isLoading}
+            table={table}
         />
     );
 };

@@ -8,6 +8,11 @@ $inputHeight: 3rem;
     .login-container{
         position: relative;
 
+        h1{
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+
         .login-icon{
             font-size: 7rem;
             text-align: center;

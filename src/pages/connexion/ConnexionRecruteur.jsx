@@ -13,6 +13,7 @@ const ConnexionRecruteur = ({ table }) => {
             incriptionPath={menuPaths.newRecruteur}
             sms={sms}
             isLoading={isLoading}
+            table={table}
         />
     );
 };

@@ -12,6 +12,7 @@ const ConnexionAdmin = ({ table }) => {
             handleChange={handleChange}
             sms={sms}
             isLoading={isLoading}
+            table={table}
         />
     );
 };

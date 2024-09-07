@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { menuPaths } from "../../utilities/constantes";
 import { ImSpinner9 } from "react-icons/im";
@@ -9,16 +9,21 @@ import usePageTitle from "../../hooks/usePageTitle";
 
 const Newuser = ({ table = tables.candidats }) => {
     const { sms, isLoading, handleChange, handleSubmit } = useCreateuser(table);
+    const [titre, setTitre] = useState("");
     let redirect = menuPaths.connexionCandidat;
     usePageTitle("Inscription");
 
     // Par defaut la redirection est vers la connexion candidat et si' c'est un recruteur alors la redirection change
     if (table === tables.representants) redirect = menuPaths.connexionRecruteur;
-
+    useEffect(() => {
+        if (table === tables.candidats) setTitre("candidats");
+        if (table === tables.representants) setTitre("récruteurs");
+        if (table === tables.admin) setTitre("administrateurs");
+    }, [table]);
     return (
         <section className="new-user">
             <form onSubmit={handleSubmit} className="new-user-container">
-                <h1 className="new-user-title">Inscription</h1>
+                <h1 className="new-user-title">Inscription {titre}</h1>
                 <div className="server-err">{sms.serverErr}</div>
                 <UserInput
                     handleChange={handleChange}

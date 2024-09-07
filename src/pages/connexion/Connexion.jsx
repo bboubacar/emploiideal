@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoPerson } from "react-icons/io5";
 import { FaLock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import UserInput from "../../components/UserInput";
 import { ImSpinner9 } from "react-icons/im";
 import usePageTitle from "../../hooks/usePageTitle";
+import { tables } from "../../utilities/db_infos";
 
 const Connexion = ({
     handleChange,
     handleSubmit,
     sms,
     isLoading,
+    table,
     incriptionPath = "",
 }) => {
     usePageTitle("Connexion");
+    const [titre, setTitre] = useState("");
+    useEffect(() => {
+        if (table === tables.candidats) setTitre("candidats");
+        if (table === tables.representants) setTitre("récruteurs");
+        if (table === tables.admin) setTitre("administrateurs");
+    }, [table]);
+
     return (
         <section className="login-user">
             <form onSubmit={handleSubmit} className="login-container">
+                <h1>Connexion {titre}</h1>
                 <div className="login-icon">
                     <IoPerson />
                 </div>
