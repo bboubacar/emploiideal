@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { MdVisibility } from "react-icons/md";
+import { MdVisibilityOff } from "react-icons/md";
+
 const UserInput = ({
     name,
     pholder,
@@ -6,7 +10,12 @@ const UserInput = ({
     handleChange,
     message,
     icon = "",
+    view = false,
 }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const changeView = (ev) => {
+        setIsVisible(!isVisible);
+    };
     return (
         <div className={`${name}-input input-container`}>
             <label htmlFor={name}>
@@ -16,7 +25,7 @@ const UserInput = ({
             <div htmlFor={name}>
                 <input
                     id={name}
-                    type={type}
+                    type={isVisible ? "text" : type}
                     placeholder={pholder}
                     aria-label={label}
                     name={name}
@@ -24,6 +33,13 @@ const UserInput = ({
                 />
                 {icon ? (
                     <div className="login-input-btn input-btn">{icon}</div>
+                ) : (
+                    ""
+                )}
+                {view ? (
+                    <div className="pwdView-svg" onClick={changeView}>
+                        {isVisible ? <MdVisibilityOff /> : <MdVisibility />}
+                    </div>
                 ) : (
                     ""
                 )}

@@ -1150,3 +1150,26 @@ $searchWidtn: 50px;
         background-color: rgba($warning-color, 1);
     }
 }
+
+@mixin pwdView(){
+    .pwdView-svg{
+        position: absolute;
+        top: 0;
+        right: 3px;
+        height: 100%;
+        @include flex();
+        align-items: center;
+        font-size: 1.2rem;
+        transition: $defautDuration;
+
+        svg{
+            cursor: pointer;
+        }
+
+        &:hover{
+            svg{
+                opacity: 1;
+            }
+        }
+    }
+}

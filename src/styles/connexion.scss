@@ -41,8 +41,9 @@ $inputHeight: 3rem;
                     background-color: $light-blue;
                     color: $white-color;
                 }
-                
             }
+
+            @include pwdView();
 
             .login-input-btn{
                 top: 0;

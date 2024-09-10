@@ -51,6 +51,7 @@ const Connexion = ({
                         handleChange={handleChange}
                         message={sms?.password}
                         icon={<FaLock />}
+                        view={true}
                     />
                 </div>
                 <div className="forget-pwd">

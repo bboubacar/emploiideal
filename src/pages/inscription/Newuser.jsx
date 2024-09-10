@@ -56,6 +56,7 @@ const Newuser = ({ table = tables.candidats }) => {
                     label="votre mot de passe"
                     handleChange={handleChange}
                     message={sms.password}
+                    view={true}
                 />
 
                 <UserInput
@@ -65,6 +66,7 @@ const Newuser = ({ table = tables.candidats }) => {
                     label="repeter votre mot de passe"
                     handleChange={handleChange}
                     message={sms.rpwd}
+                    view={true}
                 />
                 <input
                     type="submit"

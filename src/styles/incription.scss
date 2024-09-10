@@ -27,8 +27,9 @@
                 input{
                     padding-left: $largePadding;
                 }
+
+                @include pwdView();
             }
-            
         }
     }
 }
