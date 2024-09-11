@@ -19,6 +19,7 @@ const useCreateuser = (table) => {
         password: "",
         rpwd: "",
     });
+    const [cguAccept, setCguAccept] = useState(false);
     const [sms, setSms] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +28,23 @@ const useCreateuser = (table) => {
             inputChange(event, setUser, setSms);
         } catch (err) {
             console.log("erreur ", err);
+        }
+    };
+
+    const checkChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.checked;
+        setCguAccept(value);
+        if (!value) {
+            setSms((prev) => ({
+                ...prev,
+                [name]: "Acceptez les conditions d'utilisation",
+            }));
+        } else {
+            setSms((prev) => ({
+                ...prev,
+                [name]: false,
+            }));
         }
     };
 
@@ -61,36 +79,42 @@ const useCreateuser = (table) => {
                 if (user.password !== user.rpwd) {
                     setSms({ rpwd: "Mot de passe ne correspond pas" });
                 } else {
-                    setIsLoading(true);
+                    if (!cguAccept) {
+                        setSms({
+                            cguAccept: "Acceptez les conditions d'utilisation",
+                        });
+                    } else {
+                        setIsLoading(true);
 
-                    // Verify is email is already used
-                    let emailAva = await axiosRequest(
-                        methods.post,
-                        `${routes.users}${routes.verify_email}/${table}`,
-                        { email: user.email }
-                    );
-
-                    if (emailAva) {
-                        // Create new user
-                        let result = await axiosRequest(
+                        // Verify is email is already used
+                        let emailAva = await axiosRequest(
                             methods.post,
-                            `${routes.users}${routes.createUser}/${table}`,
-                            user
+                            `${routes.users}${routes.verify_email}/${table}`,
+                            { email: user.email }
                         );
-                        if (result?.data?.status) {
-                            table === tables.representants
-                                ? navigate(menuPaths.congrat2)
-                                : navigate(menuPaths.congrat);
-                        } else {
-                            setSms({
-                                serverErr: "Erreur d'ouverture du compte",
-                            });
-                        }
-                    } else setSms({ email: "Adresse email indisponble" });
 
-                    setTimeout(() => {
-                        setIsLoading(false);
-                    }, 1000);
+                        if (emailAva) {
+                            // Create new user
+                            let result = await axiosRequest(
+                                methods.post,
+                                `${routes.users}${routes.createUser}/${table}`,
+                                user
+                            );
+                            if (result?.data?.status) {
+                                table === tables.representants
+                                    ? navigate(menuPaths.congrat2)
+                                    : navigate(menuPaths.congrat);
+                            } else {
+                                setSms({
+                                    serverErr: "Erreur d'ouverture du compte",
+                                });
+                            }
+                        } else setSms({ email: "Adresse email indisponble" });
+
+                        setTimeout(() => {
+                            setIsLoading(false);
+                        }, 1000);
+                    }
                 }
             }
         } catch (err) {
@@ -99,7 +123,7 @@ const useCreateuser = (table) => {
         }
     };
 
-    return { sms, isLoading, handleChange, handleSubmit };
+    return { sms, isLoading, handleChange, handleSubmit, checkChange };
 };
 
 export default useCreateuser;

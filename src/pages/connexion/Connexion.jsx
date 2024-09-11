@@ -6,6 +6,8 @@ import UserInput from "../../components/UserInput";
 import { ImSpinner9 } from "react-icons/im";
 import usePageTitle from "../../hooks/usePageTitle";
 import { tables } from "../../utilities/db_infos";
+import { dispatchNotification } from "../../utilities/functions";
+import { notifSms, typeNotif } from "../../utilities/constantes";
 
 const Connexion = ({
     handleChange,
@@ -22,6 +24,13 @@ const Connexion = ({
         if (table === tables.representants) setTitre("récruteurs");
         if (table === tables.admin) setTitre("administrateurs");
     }, [table]);
+
+    const forgetPwd = (ev) => {
+        dispatchNotification({
+            message: notifSms.pwdfgt,
+            type: typeNotif.info,
+        });
+    };
 
     return (
         <section className="login-user">
@@ -55,7 +64,9 @@ const Connexion = ({
                     />
                 </div>
                 <div className="forget-pwd">
-                    {incriptionPath && <Link>mot de passe oublié?</Link>}
+                    {incriptionPath && (
+                        <Link onClick={forgetPwd}>mot de passe oublié?</Link>
+                    )}
                 </div>
                 <input
                     type="submit"

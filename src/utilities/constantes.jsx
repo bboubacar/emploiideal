@@ -217,12 +217,13 @@ export const notifSms = {
     invalidAffiliationFail: "Echec du rejet de l'afiliation",
     smsSend: "Message envoyé avec succès",
     smsFail: "Échec de l'envoi de votre message",
+    pwdfgt: "Contactez l'administrateur sur la page de contact",
 };
 
 export const typeNotif = {
     succes: "succes",
     fail: "warning",
-    danger: "danger",
+    info: "info",
 };
 
 export const actionsValues = {

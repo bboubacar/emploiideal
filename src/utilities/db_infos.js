@@ -1,6 +1,6 @@
 export const routes = {
-    // based_url: "http://offres.emplois/",
-    based_url: "https://bcr.alwaysdata.net/",
+    based_url: "http://offres.emplois/",
+    // based_url: "https://bcr.alwaysdata.net/",
     users: "users/",
     createUser: "register",
     updateUser: "update",

@@ -6,9 +6,11 @@ import { tables } from "../../utilities/db_infos";
 import useCreateuser from "../../hooks/useCreateuser";
 import UserInput from "../../components/UserInput";
 import usePageTitle from "../../hooks/usePageTitle";
+import { openNewWin } from "../../utilities/functions";
 
 const Newuser = ({ table = tables.candidats }) => {
-    const { sms, isLoading, handleChange, handleSubmit } = useCreateuser(table);
+    const { sms, isLoading, handleChange, handleSubmit, checkChange } =
+        useCreateuser(table);
     const [titre, setTitre] = useState("");
     let redirect = menuPaths.connexionCandidat;
     usePageTitle("Inscription");
@@ -68,6 +70,22 @@ const Newuser = ({ table = tables.candidats }) => {
                     message={sms.rpwd}
                     view={true}
                 />
+                <div className="cgu-container">
+                    <div className="erreur">{sms.cguAccept}</div>
+                    <UserInput
+                        name="cguAccept"
+                        type="checkbox"
+                        handleChange={checkChange}
+                    />
+                    <div
+                        className="cgu-texte"
+                        onClick={() => {
+                            openNewWin(menuPaths.conditions);
+                        }}
+                    >
+                        Conditions générales d'utilisation
+                    </div>
+                </div>
                 <input
                     type="submit"
                     value="S'inscrire"
