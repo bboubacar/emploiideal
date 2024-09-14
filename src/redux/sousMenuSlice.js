@@ -11,12 +11,12 @@ const sousMenuSlice = createSlice({
     changeSousMenu:  (state) => {
       let token = localStorage.getItem(userToken);
       
-      if(!token){
+      if(!token || token==="undefined"){
         state.title=connexionSousmenu?.title; 
         state.content=connexionSousmenu?.content;
         return;
       }
-
+      
       token = jwtDecode(token);
       
       let newState = profileSousmenu;
