@@ -1,6 +1,5 @@
 export const routes = {
-    // based_url: "http://offres.emplois/",
-    based_url: "https://bcr.alwaysdata.net/",
+    based_url: import.meta.env.VITE_BASE_URL,
     users: "users/",
     createUser: "register",
     updateUser: "update",
