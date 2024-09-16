@@ -1,5 +1,5 @@
 export const routes = {
-    based_url: import.meta.env.VITE_BASE_URL,
+    based_url: import.meta.env.VITE_API_URL,
     users: "users/",
     createUser: "register",
     updateUser: "update",
