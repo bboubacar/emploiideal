@@ -412,6 +412,16 @@
                 justify-content: center;
                 font-size: 1.4rem;
             }
+
+            .profession, .domaines{
+                div{
+                    span{
+                        width: calc(100% - 1.7rem);
+                        word-wrap: break-word;
+                        display: block;
+                    }
+                }
+            }
     
             .profession, .domaines, .responsabilite, .cv{
                 text-align: center;
@@ -477,6 +487,15 @@
                 .content-text{
                     @include flex(column);
                     row-gap: .5rem;
+                    width: 100%;
+
+                    div{
+                        span{
+                            display: block;
+                            width: calc(100% - 1.7rem);
+                            word-wrap: break-word;
+                        }
+                    }
                 }
             }
 
@@ -485,9 +504,9 @@
                 text-decoration: none;
                 
                 span{
-                    width: fit-content;
+                    width: calc(100% - 1.7rem);
                     position: relative;
-                   
+                    word-wrap: break-word;
                 }
 
                 &:hover span{
@@ -496,7 +515,8 @@
             }
 
             svg{
-                font-size: 1.5rem
+                font-size: 1.5rem;
+                min-width: 1.5rem;
             }
         }
 

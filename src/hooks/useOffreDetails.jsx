@@ -69,10 +69,13 @@ const useOffreDetails = () => {
 
             if (!is_exist) {
                 setAlready(true);
-                stopLoader(setIsLoading, null, {
-                    message: notifSms.already,
-                    type: typeNotif.fail,
-                });
+                stopLoader(
+                    setIsLoading,
+                    dispatchNotification({
+                        message: notifSms.already,
+                        type: typeNotif.fail,
+                    })
+                );
             } else setAlready(false);
         }
 
