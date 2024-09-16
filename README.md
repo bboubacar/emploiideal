@@ -6,4 +6,5 @@ Ce répertoire contient le front-end de l'application, développé avec Vite.js.
 
 ## Récupérer le projet
 
-Pour récuperer le projet et l'executer en local vous devez faire `git clone https://github.com/bboubacar/emploiideal.git`
+Pour récuperer le projet et l'executer en local vous devez faire <br />
+`git clone https://github.com/bboubacar/emploiideal.git`
