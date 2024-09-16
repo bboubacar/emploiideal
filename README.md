@@ -22,7 +22,7 @@ Dans un fichier `.env` vous devez ajouter:
 Si vous n'avez pas accès à mon répertoire pour l'API, vous pouvez utiliser l'adresse suivante pour envoyer vos requêtes : <br />
 `VITE_API_URL=https://bbcr.alwaysdata.net/`
 
-### Clé EMAILJS
+### Clé EMAIL JS
 
 Pour permettre aux utilisateurs de vous contacter par email via la page de contact, créez un compte sur EmailJS et récupérez les clés nécessaires à ajouter dans le fichier `.env`: <br />
 `VITE_EMAILJS_SERVICE_KEY=service_s1k0t7h` <br />
