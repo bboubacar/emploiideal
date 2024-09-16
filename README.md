@@ -19,7 +19,7 @@ Dans un fichier `.env` vous devez ajouter:
 
 ### Addresse API
 
-Si vous n'avez pas accès à mon répertoire pour l'API, vous pouvez utiliser l'adresse suivante pour envoyer vos requêtes :
+Si vous n'avez pas accès à mon répertoire pour l'API, vous pouvez utiliser l'adresse suivante pour envoyer vos requêtes : <br />
 `VITE_API_URL=https://bbcr.alwaysdata.net/`
 
 ### Clé EMAILJS
