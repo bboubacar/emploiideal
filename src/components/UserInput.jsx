@@ -12,6 +12,7 @@ const UserInput = ({
     icon = "",
     view = false,
 }) => {
+    // Etat pour la visibilté du mot de passe ou non
     const [isVisible, setIsVisible] = useState(false);
     const changeView = (ev) => {
         setIsVisible(!isVisible);
