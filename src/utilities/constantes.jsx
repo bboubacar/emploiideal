@@ -218,6 +218,7 @@ export const notifSms = {
     smsSend: "Message envoyé avec succès",
     smsFail: "Échec de l'envoi de votre message",
     pwdfgt: "Contactez l'administrateur sur la page de contact",
+    noInternet: "Accès internet indisponible",
 };
 
 export const typeNotif = {

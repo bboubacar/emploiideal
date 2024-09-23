@@ -30,7 +30,13 @@ export async function axiosRequest(method, endpoint, data, isHeaders=false){
                 break;
         }
     }catch(err){
-        // console.log(err);
+        if(err?.code==="ERR_NETWORK"){
+            dispatchNotification({
+                message: notifSms.noInternet,
+                type: typeNotif.fail,
+            })
+            throw new Error("");
+        }
         return null;
     }
 }
